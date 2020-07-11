@@ -88,8 +88,9 @@ delay:; It just works, i wrote it myself, actually no, i kanged it from Stack Ov
   ret
 
 reboot:
-  ;jmp 0xFFFF:0x0000 ; Fucking awful solution
-  int 0x19 ; Temporary solution, it doesnt reboot the system, but it goes to start of MBR
+  jmp far ptr 0xFFFFh:0x0 ; some shit solution that seems to work now
+  ; int 0x19 ; Temporary solution, it doesnt reboot the system, but it goes to start of MBR
+  hlt
 
 ; Cool L33T ASCII art
 asciiart_str0: db "  ____               ___          __", 10, 13, 0
