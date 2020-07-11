@@ -88,7 +88,7 @@ delay:; It just works, i wrote it myself, actually no, i kanged it from Stack Ov
   ret
 
 reboot:
-  jmp far ptr 0xFFFFh:0x0 ; some shit solution that seems to work now
+  jmp far ptr 0xFFFF:0x0000 ; some shit solution that seems to work now
   ; int 0x19 ; Temporary solution, it doesnt reboot the system, but it goes to start of MBR
   hlt
 
